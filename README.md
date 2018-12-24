@@ -22,9 +22,9 @@ void Mat()
 		cout << "4. Вернуться\n";
 		cout << ">: ";
 		ch = _getch();
-		//if (ch == 49) Mat();
-		//if (ch == 50) Bio;
-		//if (ch == 51) Ist
+		//if (ch == 49) 
+		//if (ch == 50) 
+		//if (ch == 51) 
 		if (ch == 52) ch = 27;
 	}
 }
