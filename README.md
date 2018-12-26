@@ -5,8 +5,12 @@
 #include <fstream> 
 #include <string> 
 #include <stdlib.h> 
+#include <iostream> 
+#include <filesystem> 
+
 
 using namespace std;
+namespace fs = experimental::filesystem;
 
 
 void Mat()
@@ -16,15 +20,15 @@ void Mat()
 	{
 		system("cls");
 		cout << "***Математика***\n";
-		cout << "1. Тема 1\n";
-		cout << "2. Тема 2\n";
-		cout << "3. Тема 3\n";
+		string path = "../предметы/1. Математика";
+		for (auto & p : fs::directory_iterator(path))
+			cout << p << endl;
 		cout << "4. Вернуться\n";
 		cout << ">: ";
 		ch = _getch();
-		//if (ch == 49) 
-		//if (ch == 50) 
-		//if (ch == 51) 
+		//if (ch == 49) Mat();
+		//if (ch == 50) Bio;
+		//if (ch == 51) Ist
 		if (ch == 52) ch = 27;
 	}
 }
@@ -36,9 +40,9 @@ void Bio()
 	{
 		system("cls");
 		cout << "***Биология***\n";
-		cout << "1. Тема 1\n";
-		cout << "2. Тема 2\n";
-		cout << "3. Тема 3\n";
+		string path = "../предметы/2. Биология";
+		for (auto & p : fs::directory_iterator(path))
+			cout << p << endl;
 		cout << "4. Вернуться назад\n";
 		cout << ">: ";
 		ch = _getch();
@@ -56,9 +60,9 @@ void Ist()
 	{
 		system("cls");
 		cout << "***История***\n";
-		cout << "1. Тема 1\n";
-		cout << "2. Тема 2\n";
-		cout << "3. Тема 3\n";
+		string path = "../предметы/3. История";
+		for (auto & p : fs::directory_iterator(path))
+			cout << p << endl;
 		cout << "4. Вернуться назад\n";
 		cout << ">: ";
 		ch = _getch();
@@ -92,9 +96,9 @@ void Start()
 		system("cls");
 		cout << "***Предметы***\n\n";
 		cout << "**Выберите предмет**\n";
-		cout << "1. Математика\n";
-		cout << "2. Биология\n";
-		cout << "3. История\n";
+		string path = "../предметы";
+		for (auto & p : fs::directory_iterator(path))
+			cout << p << endl;
 		cout << "4. Просмотр информации по работе программы \n";
 		cout << "5. Выйти из программы\n";
 		cout << ">: ";
@@ -130,7 +134,6 @@ void Menu()
 int main()
 {
 	system("chcp 1251>>null");
-	//setlocale(0, "rus");
 	Menu();
     return 0;
 }
